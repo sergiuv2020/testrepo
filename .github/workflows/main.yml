@@ -1,0 +1,16 @@
+name: Environment cleanup
+on:
+  pull_request:
+    types: [ closed ]
+    branches: 
+    - '!master'
+    - '!development'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: commit delete env
+      run: |
+        git commit --allow-empty -m "Deleting branch environment [delete env!]" 
+        git push
