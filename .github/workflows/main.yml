@@ -1,11 +1,9 @@
 name: Environment cleanup
 on:
-  pull_request:
-    types:
-      - closed
+  delete:
     branches: 
       - '!master'
-      - '!development'
+      - '!OT-*'
 jobs:
   build:
     runs-on: ubuntu-latest
