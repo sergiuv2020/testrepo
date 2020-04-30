@@ -1,7 +1,6 @@
 name: Environment cleanup
 on:
   pull_request:
-    types: [ closed ]
     branches: 
     - '!development'
 jobs:
