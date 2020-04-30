@@ -1,8 +1,7 @@
 name: Environment cleanup
 on:
-  push:
-    branches: [ master ]
   pull_request:
+    types: [ closed ]
     branches: 
     - '!master'
     - '!development'
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: commit delete env
-      run: |
-        git commit --allow-empty -m "Deleting branch environment [delete env!]" 
-        git push
+    - name: Git Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v4.1.6
+      with:
+        commit_message: testtttt fjdnfjdnjfndjnfd
