@@ -2,8 +2,7 @@ name: Environment cleanup
 on:
   delete:
     branches: 
-      - '!master'
-      - '!OT-*'
+      - 'delete_env'
 jobs:
   build:
     runs-on: ubuntu-latest
