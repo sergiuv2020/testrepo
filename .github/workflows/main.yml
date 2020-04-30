@@ -3,9 +3,9 @@ on:
   pull_request:
     types: [ closed ]
     branches: 
+    - 'OT-'
     - '!master'
     - '!development'
-    - 'OT-'
 jobs:
   build:
     runs-on: ubuntu-latest
